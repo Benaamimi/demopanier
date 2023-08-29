@@ -27,7 +27,7 @@
 						<td>{{ item.product.price * item.quantity }}
 							€</td>
 						<td>
-							<a href="{{ path('cart_remove', {id: item.product.id}) }}" class="text-secondary">Retirer</a></td>
+							<a href="{{ path('cart_remove', {id: item.product.id}) }}" class="text-danger">Retirer</a></td>
 					</tr>
 				{% endfor %}
 
@@ -35,12 +35,11 @@
 			<tfoot>
                 <tr>
                     <td colspan="3"  class="text-end">Total</td>
-                    <td colspan="2"  >{{ total }} €</td>
+                    <td>{{ total }} €</td>
+					<td><a href="#" class="btn btn-success">Faire la commande</a></td>
                 </tr>
             </tfoot>
 		</table>
-
-
 	{% else %}
 		<h2 class="text-center mt-5">Panier vide</h2>
 
